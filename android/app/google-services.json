@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "1094625196051",
+    "project_id": "pocketpt-29438",
+    "storage_bucket": "pocketpt-29438.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094625196051:android:64501692e36d24fdefe7e6",
+        "android_client_info": {
+          "package_name": "com.example.pocket_pt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094625196051-b4r5daqv24o8p3688lme670e3t7nvlrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pocket_pt",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1094625196051-lhq9gpsqt1sgpqjhbb4v593ubt249usg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyOOjCkj-ddf2t2ytz2WtATHfmWXyyj9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094625196051-lhq9gpsqt1sgpqjhbb4v593ubt249usg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1094625196051-hjrtv982n1hdafpfe3btftb325cb66n0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pocketPt"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094625196051:android:a4622a0eb14d65ebefe7e6",
+        "android_client_info": {
+          "package_name": "com.mycompany.pocketpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094625196051-g5kpj8osks2s3jdp1e9i9a6mg68vmu9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.pocketpt",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1094625196051-lhq9gpsqt1sgpqjhbb4v593ubt249usg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyOOjCkj-ddf2t2ytz2WtATHfmWXyyj9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094625196051-lhq9gpsqt1sgpqjhbb4v593ubt249usg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1094625196051-hjrtv982n1hdafpfe3btftb325cb66n0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pocketPt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
