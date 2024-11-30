@@ -1,5 +1,5 @@
 // Export pages
-export '/main_pages/get_started/get_started_widget.dart' show GetStartedWidget;
+export '/questions/get_started/get_started_widget.dart' show GetStartedWidget;
 export '/main_pages/login_page/login_page_widget.dart' show LoginPageWidget;
 export '/questions/select_goal/select_goal_widget.dart' show SelectGoalWidget;
 export '/questions/specific_muscle_core/specific_muscle_core_widget.dart'
@@ -16,4 +16,5 @@ export '/questions/confirmation/confirmation_widget.dart'
 export '/main_pages/rehabilitation_plan/rehabilitation_plan_widget.dart'
     show RehabilitationPlanWidget;
 export '/main_pages/app_setting/app_setting_widget.dart' show AppSettingWidget;
-export '/radio_button/radio_button_widget.dart' show RadioButtonWidget;
+export '/questions/select_goal_severe/select_goal_severe_widget.dart'
+    show SelectGoalSevereWidget;

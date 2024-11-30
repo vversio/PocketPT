@@ -96,25 +96,7 @@ class _SelectGoalWidgetState extends State<SelectGoalWidget> {
                           width: 348.0,
                           height: 562.0,
                           decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            gradient: LinearGradient(
-                              colors: [
-                                FlutterFlowTheme.of(context).alternate,
-                                FlutterFlowTheme.of(context).primary
-                              ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(0.0, -1.0),
-                              end: const AlignmentDirectional(0, 1.0),
-                            ),
+                            color: FlutterFlowTheme.of(context).primary,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Column(
@@ -143,7 +125,63 @@ class _SelectGoalWidgetState extends State<SelectGoalWidget> {
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('SelectMuscleGroup');
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
+                                        functionalGoal: 'Alleviate Pain',
+                                      ));
+
+                                      context.pushNamed('Confirmation');
+                                    },
+                                    text: 'Alleviate Pain and Muscle Tension',
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: const Color(0xFF38097A),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 16.0, 0.0, 16.0),
+                                child: Container(
+                                  width: 272.0,
+                                  height: 64.0,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF38097A),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33000000),
+                                        offset: Offset(
+                                          0.0,
+                                          2.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
+                                        functionalGoal: 'Improve Mobility',
+                                      ));
+
+                                      context.pushNamed('Confirmation');
                                     },
                                     text:
                                         'Improve Mobility and Range of Motion',
@@ -190,87 +228,12 @@ class _SelectGoalWidgetState extends State<SelectGoalWidget> {
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        functionalGoal: 'Alleviate Pain',
-                                      ));
-                                      _model.alleviatePain =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                functionalGoal:
-                                                    'Alleviate Pain',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('SelectMuscleGroup');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Alleviate Pain and Muscle Tension',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
                                         functionalGoal: 'Strengthen Muscle ',
                                       ));
-                                      _model.strengthen =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                functionalGoal:
-                                                    'Strengthen Muscle ',
-                                              ),
-                                              userdataRecordReference);
 
-                                      context.pushNamed('SelectMuscleGroup');
-
-                                      safeSetState(() {});
+                                      context.pushNamed('Confirmation');
                                     },
                                     text:
                                         'Strengthen and Stabilize Muscle Function',

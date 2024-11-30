@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -53,7 +54,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 64.0),
                   child: Text(
-                    'User Setting',
+                    'App Setting',
                     style: FlutterFlowTheme.of(context).titleLarge.override(
                           fontFamily: 'Poppins',
                           letterSpacing: 0.0,
@@ -64,26 +65,18 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                 Container(
                   width: MediaQuery.sizeOf(context).width * 0.92,
                   decoration: BoxDecoration(
-                    boxShadow: const [
+                    color: FlutterFlowTheme.of(context).primary,
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
-                        color: Color(0x33000000),
-                        offset: Offset(
+                        color: FlutterFlowTheme.of(context).primary,
+                        offset: const Offset(
                           0.0,
                           2.0,
                         ),
                         spreadRadius: 0.0,
                       )
                     ],
-                    gradient: LinearGradient(
-                      colors: [
-                        FlutterFlowTheme.of(context).alternate,
-                        FlutterFlowTheme.of(context).primary
-                      ],
-                      stops: const [0.0, 1.0],
-                      begin: const AlignmentDirectional(0.0, -1.0),
-                      end: const AlignmentDirectional(0, 1.0),
-                    ),
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
@@ -131,7 +124,19 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await actions.newCustomAction();
+                                await currentUserReference!
+                                    .update(createUserEmailAccountsRecordData(
+                                  functionalGoal: '',
+                                  painLevel: '',
+                                  muscleGroup: '',
+                                  specificMuscle: '',
+                                ));
+
+                                await currentUserReference!
+                                    .update(createUserEmailAccountsRecordData(
+                                  isNewUser: true,
+                                ));
+                                await actions.newCustomAction2();
 
                                 context.pushNamed('GetStarted');
                               },

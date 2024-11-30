@@ -146,9 +146,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const AppSettingWidget(),
         ),
         FFRoute(
-          name: 'RadioButton',
-          path: '/radioButton',
-          builder: (context, params) => const RadioButtonWidget(),
+          name: 'SelectGoalSevere',
+          path: '/selectGoalSevere',
+          builder: (context, params) => SelectGoalSevereWidget(
+            rehabilitationgoal: params.getParam(
+              'rehabilitationgoal',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -92,25 +92,7 @@ class _SelectMuscleGroupWidgetState extends State<SelectMuscleGroupWidget> {
                           width: 348.0,
                           height: 562.0,
                           decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            gradient: LinearGradient(
-                              colors: [
-                                FlutterFlowTheme.of(context).alternate,
-                                FlutterFlowTheme.of(context).primary
-                              ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(0.0, -1.0),
-                              end: const AlignmentDirectional(0, 1.0),
-                            ),
+                            color: FlutterFlowTheme.of(context).primary,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Column(
@@ -139,23 +121,12 @@ class _SelectMuscleGroupWidgetState extends State<SelectMuscleGroupWidget> {
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
                                         muscleGroup: 'Upper Extremity',
                                       ));
-                                      _model.upperExtremity =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                muscleGroup: 'Upper Extremity',
-                                              ),
-                                              userdataRecordReference);
 
                                       context.pushNamed('SpecificMuscleUpper');
-
-                                      safeSetState(() {});
                                     },
                                     text: 'Upper Extremity ',
                                     options: FFButtonOptions(
@@ -201,23 +172,12 @@ class _SelectMuscleGroupWidgetState extends State<SelectMuscleGroupWidget> {
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
                                         muscleGroup: 'Lower Extremity',
                                       ));
-                                      _model.lowerExtremity =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                muscleGroup: 'Lower Extremity',
-                                              ),
-                                              userdataRecordReference);
 
                                       context.pushNamed('SpecificMuscleLower');
-
-                                      safeSetState(() {});
                                     },
                                     text: 'Lower Extremity',
                                     options: FFButtonOptions(
@@ -263,23 +223,12 @@ class _SelectMuscleGroupWidgetState extends State<SelectMuscleGroupWidget> {
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
+                                      await currentUserReference!.update(
+                                          createUserEmailAccountsRecordData(
                                         muscleGroup: 'Core',
                                       ));
-                                      _model.core =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                muscleGroup: 'Core',
-                                              ),
-                                              userdataRecordReference);
 
                                       context.pushNamed('SpecificMuscleCore');
-
-                                      safeSetState(() {});
                                     },
                                     text: 'Core',
                                     options: FFButtonOptions(

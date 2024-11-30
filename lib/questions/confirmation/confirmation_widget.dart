@@ -8,6 +8,7 @@ import 'confirmation_model.dart';
 export 'confirmation_model.dart';
 
 class ConfirmationWidget extends StatefulWidget {
+  /// add a gradient on the background
   const ConfirmationWidget({super.key});
 
   @override
@@ -66,28 +67,10 @@ class _ConfirmationWidgetState extends State<ConfirmationWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 16.0),
                           child: Container(
-                            width: 348.0,
+                            width: double.infinity,
                             height: 702.0,
                             decoration: BoxDecoration(
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x33000000),
-                                  offset: Offset(
-                                    0.0,
-                                    2.0,
-                                  ),
-                                )
-                              ],
-                              gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).alternate,
-                                  FlutterFlowTheme.of(context).primary
-                                ],
-                                stops: const [0.0, 1.0],
-                                begin: const AlignmentDirectional(0.0, -1.0),
-                                end: const AlignmentDirectional(0, 1.0),
-                              ),
+                              color: FlutterFlowTheme.of(context).primary,
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Align(
@@ -99,9 +82,9 @@ class _ConfirmationWidgetState extends State<ConfirmationWidget> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
+                                        16.0, 0.0, 16.0, 16.0),
                                     child: Text(
-                                      'You\'re all set, Press the complete button to continue to you Personalized Rheabilitation Plan',
+                                      'You\'re all set, Press the complete button to continue to you Personalized Rhabilitation Plan',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
@@ -142,11 +125,6 @@ class _ConfirmationWidgetState extends State<ConfirmationWidget> {
                                               createUserEmailAccountsRecordData(
                                             isNewUser: false,
                                           ));
-
-                                          await currentUserReference!.update(
-                                              createUserEmailAccountsRecordData(
-                                            isNewUser: true,
-                                          ));
                                         },
                                         text: 'Complete',
                                         options: FFButtonOptions(
@@ -168,6 +146,21 @@ class _ConfirmationWidgetState extends State<ConfirmationWidget> {
                                               BorderRadius.circular(16.0),
                                         ),
                                       ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 16.0, 16.0, 0.0),
+                                    child: Text(
+                                      'You can Reset your Choices within the App\'s setting  that is located on the Navbar',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 12.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],

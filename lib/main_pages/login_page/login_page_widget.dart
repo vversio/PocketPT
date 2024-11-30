@@ -3,13 +3,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
 class LoginPageWidget extends StatefulWidget {
+  /// can you add some physical theraphy type of designs
   const LoginPageWidget({super.key});
 
   @override
@@ -504,6 +504,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                         0.0, 0.0, 0.0, 16.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    await authManager
+                                                        .refreshUser();
                                                     GoRouter.of(context)
                                                         .prepareAuthEvent();
 
@@ -526,6 +528,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                         currentUserDocument
                                                             ?.isNewUser,
                                                         false)) {
+                                                      context.pushNamedAuth(
+                                                          'GetStarted',
+                                                          context.mounted);
+                                                    } else {
+                                                      context.pushNamedAuth(
+                                                          'RehabilitationPlan',
+                                                          context.mounted);
+                                                    }
+
+                                                    if (currentUserEmailVerified) {
                                                       context.pushNamedAuth(
                                                           'GetStarted',
                                                           context.mounted);
@@ -1051,28 +1063,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                   ),
                 ),
               ),
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-              ))
-                Expanded(
-                  flex: 6,
-                  child: Container(
-                    width: 100.0,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: CachedNetworkImageProvider(
-                          'https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
-                        ),
-                      ),
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
             ],
           ),
         ),

@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'specific_muscle_lower_widget.dart' show SpecificMuscleLowerWidget;
+import 'select_goal_severe_widget.dart' show SelectGoalSevereWidget;
 import 'package:flutter/material.dart';
 
-class SpecificMuscleLowerModel
-    extends FlutterFlowModel<SpecificMuscleLowerWidget> {
+class SelectGoalSevereModel extends FlutterFlowModel<SelectGoalSevereWidget> {
   @override
   void initState(BuildContext context) {}
 

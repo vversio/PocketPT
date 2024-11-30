@@ -41,7 +41,7 @@ class _SpecificMuscleCoreWidgetState extends State<SpecificMuscleCoreWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF020612),
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         body: SafeArea(
           top: true,
           child: Column(
@@ -90,349 +90,403 @@ class _SpecificMuscleCoreWidgetState extends State<SpecificMuscleCoreWidget> {
                             0.0, 16.0, 0.0, 16.0),
                         child: Container(
                           width: 348.0,
-                          height: 562.0,
+                          height: 716.0,
                           decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            gradient: LinearGradient(
-                              colors: [
-                                FlutterFlowTheme.of(context).alternate,
-                                FlutterFlowTheme.of(context).primary
-                              ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(0.0, -1.0),
-                              end: const AlignmentDirectional(0, 1.0),
-                            ),
+                            color: FlutterFlowTheme.of(context).primary,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Lower Back',
-                                      ));
-                                      _model.lowerBack =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Lower Back',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Lower Back',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://static.wixstatic.com/media/607962_328777f2e77547d0a5ff698303fb56ef~mv2.jpg/v1/crop/x_85,y_0,w_656,h_897/fill/w_500,h_684,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LOWER%20BACK%20MUSCULAR%20PAIN.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Lower Back',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Lower Back',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Diaphragm',
-                                      ));
-                                      _model.diaphragm =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Diaphragm',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Diaphragm',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://www.shutterstock.com/image-illustration/diaphragm-muscle-that-helps-you-600nw-2437038019.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Diaphragm',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Diaphragm',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Multifidus',
-                                      ));
-                                      _model.multifidus =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Multifidus',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Multifidus',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://healesclinics.com/wp-content/uploads/2022/12/multifidus-300x300.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Multifidus',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Multifidus',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Abdominals',
-                                      ));
-                                      _model.abdominals =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Abdominals',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Abdominal Muscles',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://www.madscientistofmuscle.com/1-exercises/1-muscle-anatomy/graphics/rectus-abdominis.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Abdominals',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Abdominal Muscle',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Obliques',
-                                      ));
-                                      _model.obliques =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Obliques',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Oblique Muscles',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://storage.googleapis.com/flex-web-media-prod/content/images/wp-content/uploads/2024/01/the-oblique-muscles.webp',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Obliques',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Oblique Muscles',
+                                          options: FFButtonOptions(
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

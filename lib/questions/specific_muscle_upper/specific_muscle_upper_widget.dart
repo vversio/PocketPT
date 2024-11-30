@@ -90,341 +90,403 @@ class _SpecificMuscleUpperWidgetState extends State<SpecificMuscleUpperWidget> {
                             0.0, 16.0, 0.0, 16.0),
                         child: Container(
                           width: 348.0,
-                          height: 562.0,
+                          height: 716.0,
                           decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            gradient: LinearGradient(
-                              colors: [
-                                FlutterFlowTheme.of(context).alternate,
-                                FlutterFlowTheme.of(context).primary
-                              ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(0.0, -1.0),
-                              end: const AlignmentDirectional(0, 1.0),
-                            ),
+                            color: FlutterFlowTheme.of(context).primary,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Triceps',
-                                      ));
-                                      _model.triceps =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Triceps',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Triceps',
-                                    options: FFButtonOptions(
-                                      height: 0.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://www.mz-store.com/blog/wp-content/uploads_en/2018/11/triceps1-768x768.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Triceps',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Triceps',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Biceps',
-                                      ));
-                                      _model.biceps =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Biceps',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Biceps',
-                                    options: FFButtonOptions(
-                                      height: 0.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://samarpanphysioclinic.com/wp-content/uploads/2022/03/Biceps-muscle-pain-1200x1422.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Biceps',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Biceps',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Deltoids',
-                                      ));
-                                      _model.deltoids =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Deltoids',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Deltoids',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://moyerwellness.com/wp-content/uploads/2023/07/Deltoids-1.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Biceps',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Deltoids',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Chest',
-                                      ));
-                                      _model.chest =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Chest',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Chest',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://www.madscientistofmuscle.com/1-exercises/1-muscle-anatomy/graphics/pectoralis.jpg',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            var userdataRecordReference =
+                                                UserdataRecord.createDoc(
+                                              currentUserReference!,
+                                              id: 'main_data',
+                                            );
+                                            await userdataRecordReference
+                                                .set(createUserdataRecordData(
+                                              specificMuscle: 'Chest',
+                                            ));
+                                            _model.chest = UserdataRecord
+                                                .getDocumentFromData(
+                                                    createUserdataRecordData(
+                                                      specificMuscle: 'Chest',
+                                                    ),
+                                                    userdataRecordReference);
+
+                                            context.pushNamed('PainLevel');
+
+                                            safeSetState(() {});
+                                          },
+                                          text: 'Chest',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      var userdataRecordReference =
-                                          UserdataRecord.createDoc(
-                                              currentUserReference!);
-                                      await userdataRecordReference
-                                          .set(createUserdataRecordData(
-                                        specificMuscle: 'Neck',
-                                      ));
-                                      _model.neck =
-                                          UserdataRecord.getDocumentFromData(
-                                              createUserdataRecordData(
-                                                specificMuscle: 'Neck',
-                                              ),
-                                              userdataRecordReference);
-
-                                      context.pushNamed('PainLevel');
-
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Neck',
-                                    options: FFButtonOptions(
-                                      height: 58.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 272.0,
+                                    height: 256.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: Color(0x33000000),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
                                           ),
-                                      elevation: 0.0,
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              'https://anatomy.biodigital.com/static/a4bfdbefeaf46ca4e039e7548f5a6f2d/a5e85/muscles-of-neck.png',
+                                              width: 200.0,
+                                              height: 190.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await currentUserReference!.update(
+                                                createUserEmailAccountsRecordData(
+                                              specificMuscle: 'Neck',
+                                            ));
+
+                                            context.pushNamed('PainLevel');
+                                          },
+                                          text: 'Neck',
+                                          options: FFButtonOptions(
+                                            height: 36.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF38097A),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

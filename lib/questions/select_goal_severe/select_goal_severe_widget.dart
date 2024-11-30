@@ -4,25 +4,30 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'pain_level_model.dart';
-export 'pain_level_model.dart';
+import 'select_goal_severe_model.dart';
+export 'select_goal_severe_model.dart';
 
-class PainLevelWidget extends StatefulWidget {
-  const PainLevelWidget({super.key});
+class SelectGoalSevereWidget extends StatefulWidget {
+  const SelectGoalSevereWidget({
+    super.key,
+    required this.rehabilitationgoal,
+  });
+
+  final String? rehabilitationgoal;
 
   @override
-  State<PainLevelWidget> createState() => _PainLevelWidgetState();
+  State<SelectGoalSevereWidget> createState() => _SelectGoalSevereWidgetState();
 }
 
-class _PainLevelWidgetState extends State<PainLevelWidget> {
-  late PainLevelModel _model;
+class _SelectGoalSevereWidgetState extends State<SelectGoalSevereWidget> {
+  late SelectGoalSevereModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PainLevelModel());
+    _model = createModel(context, () => SelectGoalSevereModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -69,7 +74,7 @@ class _PainLevelWidgetState extends State<PainLevelWidget> {
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
-                                'Muscle\'s Pain Level',
+                                'Select Your \nRehabilitation Goal',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -82,19 +87,6 @@ class _PainLevelWidgetState extends State<PainLevelWidget> {
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: Text(
-                          'Check the specific Muscle for pain and choose the Pain Level you feel.',
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
                         ),
                       ),
                       Padding(
@@ -135,79 +127,12 @@ class _PainLevelWidgetState extends State<PainLevelWidget> {
                                     onPressed: () async {
                                       await currentUserReference!.update(
                                           createUserEmailAccountsRecordData(
-                                        painLevel: 'Low',
+                                        functionalGoal: 'Alleviate Pain',
                                       ));
 
-                                      context.pushNamed(
-                                        'SelectGoal',
-                                        queryParameters: {
-                                          'rehabilitationgoal': serializeParam(
-                                            '',
-                                            ParamType.String,
-                                          ),
-                                        }.withoutNulls,
-                                      );
+                                      context.pushNamed('Confirmation');
                                     },
-                                    text: 'Low',
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: Container(
-                                  width: 272.0,
-                                  height: 64.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF38097A),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      await currentUserReference!.update(
-                                          createUserEmailAccountsRecordData(
-                                        painLevel: 'Moderate',
-                                      ));
-
-                                      context.pushNamed(
-                                        'SelectGoal',
-                                        queryParameters: {
-                                          'rehabilitationgoal': serializeParam(
-                                            '',
-                                            ParamType.String,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    text: 'Moderate',
+                                    text: 'Alleviate Pain and Muscle Tension',
                                     options: FFButtonOptions(
                                       height: 40.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -253,20 +178,61 @@ class _PainLevelWidgetState extends State<PainLevelWidget> {
                                     onPressed: () async {
                                       await currentUserReference!.update(
                                           createUserEmailAccountsRecordData(
-                                        painLevel: 'Severe',
+                                        functionalGoal: 'Improve Mobility',
                                       ));
 
-                                      context.pushNamed(
-                                        'SelectGoalSevere',
-                                        queryParameters: {
-                                          'rehabilitationgoal': serializeParam(
-                                            '',
-                                            ParamType.String,
-                                          ),
-                                        }.withoutNulls,
-                                      );
+                                      context.pushNamed('Confirmation');
                                     },
-                                    text: 'Severe',
+                                    text:
+                                        'Improve Mobility and Range of Motion',
+                                    options: FFButtonOptions(
+                                      height: 36.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: const Color(0xFF38097A),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 16.0, 0.0, 16.0),
+                                child: Container(
+                                  width: 272.0,
+                                  height: 64.0,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33000000),
+                                        offset: Offset(
+                                          0.0,
+                                          2.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text:
+                                        'Option Not Available for Severe Pain Level',
                                     options: FFButtonOptions(
                                       height: 58.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -274,7 +240,8 @@ class _PainLevelWidgetState extends State<PainLevelWidget> {
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF38097A),
+                                      color:
+                                          FlutterFlowTheme.of(context).tertiary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

@@ -213,15 +213,7 @@ class _GetStartedWidgetState extends State<GetStartedWidget>
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed(
-                              'SelectGoal',
-                              queryParameters: {
-                                'rehabilitationgoal': serializeParam(
-                                  '',
-                                  ParamType.String,
-                                ),
-                              }.withoutNulls,
-                            );
+                            context.pushNamed('SelectMuscleGroup');
                           },
                           text: 'Get Started',
                           options: FFButtonOptions(

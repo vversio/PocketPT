@@ -8,36 +8,6 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class PredictCall {
-  static Future<ApiCallResponse> call() async {
-    const ffApiRequestBody = '''
-{
-  "muscle_group": "Upper Extremity",
-  "specific_muscle": "Biceps",
-  "functional_goal": "Pain Relief",
-  "pain_level": 2
-}
-''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'predict',
-      apiUrl: 'http://127.0.0.1:8000/docs',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 class GenerateRehabilitationPlanCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
@@ -49,7 +19,7 @@ class GenerateRehabilitationPlanCall {
     return ApiManager.instance.makeApiCall(
       callName: 'GenerateRehabilitationPlan',
       apiUrl:
-          'https://4641-136-158-49-47.ngrok-free.app/generate_rehabilitation_plan',
+          'https://0912-136-158-49-187.ngrok-free.app/generate_rehabilitation_plan',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
@@ -66,18 +36,33 @@ class GenerateRehabilitationPlanCall {
     );
   }
 
-  static dynamic recommendedTreatment(dynamic response) => getJsonField(
+  static dynamic rehab(dynamic response) => getJsonField(
         response,
-        r'''$.Recommended_Treatment''',
+        r'''$.Rehabilitation_Plan''',
       );
-  static dynamic recommendedTraining(dynamic response) => getJsonField(
+  static List? prioTreatment(dynamic response) => getJsonField(
         response,
-        r'''$.Recommended_Training''',
-      );
-  static dynamic recommendedStrengthening(dynamic response) => getJsonField(
+        r'''$.Rehabilitation_Plan.Prioritized_Treatments''',
+        true,
+      ) as List?;
+  static List<String>? purpose(dynamic response) => (getJsonField(
         response,
-        r'''$.Recommended_Strengthening''',
-      );
+        r'''$.Rehabilitation_Plan.Prioritized_Treatments[0].purpose''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? treatment(dynamic response) => (getJsonField(
+        response,
+        r'''$.Rehabilitation_Plan.Prioritized_Treatments[1].purpose''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ApiPagingParams {
